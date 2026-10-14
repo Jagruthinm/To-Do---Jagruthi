@@ -1,0 +1,40 @@
+.nav {
+  background: var(--surface-bar);
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  padding: 8px 0 4px;
+  justify-content: space-around;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    display: none;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0 16px;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.item:hover {
+  color: var(--text-secondary);
+}
+
+.item.active {
+  color: var(--brand-dark);
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 400;
+}

@@ -1,0 +1,100 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.userWrapper  { align-items: flex-end; }
+.assistantWrapper { align-items: flex-start; }
+
+.toolCalls {
+  width: 100%;
+  max-width: 480px;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.userBubble {
+  background: var(--brand-fill);
+  color: var(--on-brand-fill);
+  border-bottom-right-radius: 4px;
+}
+
+.assistantBubble {
+  background: var(--surface-page);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+  border-bottom-left-radius: 4px;
+  max-width: 90%;
+}
+
+/* Markdown prose inside assistant bubble */
+.markdown :global(p)  { margin: 0 0 8px; }
+.markdown :global(p:last-child) { margin-bottom: 0; }
+.markdown :global(h1),
+.markdown :global(h2),
+.markdown :global(h3) {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px 0 4px;
+}
+.markdown :global(ul),
+.markdown :global(ol) { margin: 4px 0 8px 18px; padding: 0; }
+.markdown :global(li) { margin-bottom: 3px; }
+.markdown :global(code) {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  background: var(--bg-gray);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.markdown :global(pre) {
+  background: var(--bg-gray);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 6px 0;
+}
+.markdown :global(pre code) { background: none; padding: 0; }
+.markdown :global(strong) { font-weight: 600; }
+.markdown :global(blockquote) {
+  border-left: 3px solid var(--border-strong);
+  padding-left: 10px;
+  margin: 4px 0;
+  color: var(--text-secondary);
+}
+
+.assistantContent { display: flex; flex-direction: column; gap: 8px; }
+
+/* Button chips (confirmation prompts) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.chip {
+  background: var(--surface-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-dark);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.chip:hover {
+  background: var(--brand-light);
+  border-color: var(--brand);
+}

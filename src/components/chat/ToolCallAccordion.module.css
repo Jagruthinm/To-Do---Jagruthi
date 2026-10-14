@@ -1,0 +1,98 @@
+.accordion {
+  border-radius: var(--radius);
+  border: 0.5px solid var(--border);
+  margin: 4px 0;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  background: var(--surface-page);
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  font-size: 12px;
+  color: var(--text-secondary);
+  transition: background var(--transition-fast);
+}
+
+.header:hover { background: var(--bg-gray); }
+
+.arrow {
+  font-size: 9px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.tool {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.duration {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.body {
+  padding: 8px 10px;
+  background: var(--surface-card);
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section { display: flex; flex-direction: column; gap: 3px; }
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.code {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--surface-page);
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+/* Status colour variants */
+.success { border-color: var(--border-green); }
+.success .header { background: var(--bg-green); }
+.success .badge  { color: var(--text-green); }
+
+.error { border-color: var(--border-red); }
+.error .header   { background: var(--bg-red); }
+.error .badge    { color: var(--text-red); }
+
+.amber { border-color: var(--border-amber); }
+.amber .header   { background: var(--bg-amber); }
+.amber .badge    { color: var(--text-amber); }
+
+.running { border-color: var(--border); }
+.running .badge  { color: var(--text-muted); }

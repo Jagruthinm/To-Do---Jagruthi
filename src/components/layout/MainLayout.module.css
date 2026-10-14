@@ -1,0 +1,41 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--surface-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    max-width: 100%;
+    flex-direction: row;
+  }
+
+  .main {
+    flex: 1;
+    margin-left: 220px;
+    max-width: calc(960px + 220px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .layout {
+    padding-left: 220px;
+  }
+  .main {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

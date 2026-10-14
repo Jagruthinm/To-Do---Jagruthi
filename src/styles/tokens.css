@@ -1,0 +1,109 @@
+:root {
+  /* Brand */
+  --brand: #1D9E75;
+  --brand-light: #E1F5EE;
+  --brand-dark: #0F6E56;
+
+  /* Priority */
+  --p1: #E24B4A;
+  --p2: #C97700;
+  --p3: #378ADD;
+  --p4: #888780;
+
+  /* Surfaces */
+  --surface-page: #F0F0EE;
+  --surface-card: #ffffff;
+  --surface-bar: #FAFAF9;
+
+  /* Borders */
+  --border: #E5E4E0;
+  --border-strong: #C8C7C2;
+
+  /* Text */
+  --text-primary: #1A1A18;
+  --text-secondary: #6B6B67;
+  --text-muted: #A0A09C;
+
+  /* Semantic fills */
+  --bg-red: #FCEBEB;
+  --text-red: #A32D2D;
+  --border-red: #F09595;
+
+  --bg-blue: #E6F1FB;
+  --text-blue: #185FA5;
+  --border-blue: #85B7EB;
+
+  --bg-amber: #FAEEDA;
+  --text-amber: #854F0B;
+  --border-amber: #EF9F27;
+
+  --bg-green: #E1F5EE;
+  --text-green: #0F6E56;
+  --border-green: #5DCAA5;
+
+  --bg-gray: #F1EFE8;
+  --text-gray: #5F5E5A;
+
+  /* Radius */
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+
+  /* Accessible interactive fills — 4.5:1 with paired --on-* text token */
+  --brand-fill: #0F6E56;
+  --on-brand-fill: #ffffff;
+  --p3-fill: #185FA5;
+  --on-p3-fill: #ffffff;
+  --danger: #C0392B;
+
+  /* Shadows */
+  --shadow-card: 0 2px 24px rgba(0, 0, 0, 0.08);
+  --shadow-fab: 0 4px 12px rgba(29, 158, 117, 0.35);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease-out;
+  --transition-task: 300ms ease-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #1D9E75;
+    --brand-light: #0a3d2e;
+    --brand-dark: #5DCAA5;
+
+    --surface-page: #1a1a18;
+    --surface-card: #242422;
+    --surface-bar: #1f1f1d;
+
+    --border: #333331;
+    --border-strong: #4a4a47;
+
+    --brand-fill: #1D9E75;
+    --on-brand-fill: #1a1a18;
+    --p3-fill: #378ADD;
+    --on-p3-fill: #0d1a2b;
+
+    --text-primary: #F0EFE8;
+    --text-secondary: #A0A09C;
+    --text-muted: #6B6B67;
+
+    --bg-red: #2d1414;
+    --text-red: #F09595;
+    --bg-blue: #0d1f35;
+    --text-blue: #85B7EB;
+    --bg-amber: #2d1f07;
+    --text-amber: #FAC775;
+    --bg-green: #0a2d1e;
+    --text-green: #5DCAA5;
+    --bg-gray: #2a2a28;
+    --text-gray: #B4B2A9;
+  }
+}

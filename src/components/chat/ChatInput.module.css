@@ -1,0 +1,96 @@
+.container {
+  padding: 10px 12px 8px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-card);
+  flex-shrink: 0;
+}
+
+.inputRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  background: var(--surface-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 6px 6px 6px 12px;
+  transition: border-color var(--transition-fast);
+}
+
+.inputRow:focus-within {
+  border-color: var(--brand);
+}
+
+.textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--text-primary);
+  font-family: inherit;
+  min-height: 22px;
+  max-height: 108px; /* 4 rows × 22px + 20px padding */
+  overflow-y: auto;
+  outline: none;
+  padding: 0;
+}
+
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sendBtn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), opacity var(--transition-fast);
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: var(--brand-dark);
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Spinner for streaming state */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; opacity: 0.7; }
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+  text-align: center;
+}

@@ -1,0 +1,283 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 60;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn { from { opacity: 0; } }
+
+.sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--surface-card);
+  border-radius: 20px 20px 0 0;
+  padding: 16px;
+  z-index: 70;
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+}
+
+.sheet.open {
+  transform: translateY(0);
+}
+
+/* On desktop, present as a centered modal dialog rather than a bottom sheet. */
+@media (min-width: 768px) {
+  .sheet {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    width: calc(100% - 32px);
+    max-width: 460px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    transform: translate(-50%, -50%) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+  }
+  .sheet.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .handle { display: none; }
+}
+
+.handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-strong);
+  margin: 0 auto 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.sheetTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.closeBtn {
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+}
+
+.closeBtn:hover { color: var(--text-primary); }
+
+.titleInput {
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--surface-page);
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.titleInput:focus { border-color: var(--brand); }
+
+.notesInput {
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 9px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--surface-page);
+  outline: none;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.notesInput:focus { border-color: var(--brand); }
+
+.chipRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.chip {
+  border: 0.5px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: var(--surface-card);
+  position: relative;
+}
+
+.chip:hover {
+  border-color: var(--brand);
+  color: var(--brand-dark);
+}
+
+.chipActive {
+  border-color: var(--brand);
+  color: var(--brand-dark);
+  background: var(--brand-light);
+}
+
+.hiddenDate {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.addBtn {
+  width: 100%;
+  background: var(--brand-fill);
+  color: var(--on-brand-fill);
+  border-radius: var(--radius);
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.addBtn:hover { background: var(--brand-dark); }
+.addBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.tagWrapper {
+  position: relative;
+}
+
+.tagPicker {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  min-width: 160px;
+  background: var(--surface-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  z-index: 80;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tagOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  color: var(--text-primary);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background var(--transition-fast);
+}
+
+.tagOption:hover { background: var(--surface-page); }
+
+.tagSelected {
+  background: var(--brand-light);
+  color: var(--brand-dark);
+  font-weight: 500;
+}
+
+.tagDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tagEmpty {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  margin: 0;
+}
+
+.projectWrapper {
+  position: relative;
+}
+
+.projectPicker {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  min-width: 180px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--surface-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  z-index: 80;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.createTagRow {
+  display: flex;
+  gap: 4px;
+  padding: 6px 10px 4px;
+  border-top: 0.5px solid var(--border);
+  margin-top: 2px;
+}
+
+.createTagInput {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 5px 8px;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  outline: none;
+}
+
+.createTagInput:focus { border-color: var(--brand); }
+
+.createTagBtn {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--brand-dark);
+  padding: 5px 9px;
+  border-radius: var(--radius);
+  border: 0.5px solid var(--brand);
+  background: transparent;
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+}
+
+.createTagBtn:hover:not(:disabled) { background: var(--brand-light); }
+.createTagBtn:disabled { opacity: 0.4; cursor: not-allowed; }

@@ -1,0 +1,51 @@
+.view {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--surface-card);
+}
+
+.error {
+  margin: 8px 12px;
+  padding: 8px 12px;
+  background: var(--bg-red);
+  border: 1px solid var(--border-red);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text-red);
+  flex-shrink: 0;
+}
+
+.sidebarToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebarToggle:hover {
+  background: var(--bg-gray);
+  color: var(--text-primary);
+}
+
+/* Desktop: sidebar is always visible as a panel */
+@media (min-width: 1024px) {
+  .sidebarToggle {
+    display: none;
+  }
+}

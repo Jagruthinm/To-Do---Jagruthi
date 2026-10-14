@@ -1,0 +1,14 @@
+.badge {
+  font-size: 9px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.red    { background: var(--bg-red);   color: var(--text-red); }
+.blue   { background: var(--bg-blue);  color: var(--text-blue); }
+.amber  { background: var(--bg-amber); color: var(--text-amber); }
+.green  { background: var(--bg-green); color: var(--text-green); }
+.gray   { background: var(--bg-gray);  color: var(--text-gray); }

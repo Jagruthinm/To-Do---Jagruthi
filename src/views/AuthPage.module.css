@@ -1,0 +1,142 @@
+.page {
+  min-height: 100dvh;
+  background: var(--surface-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  border: 0.5px solid var(--border);
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo svg { margin: 0 auto 8px; }
+
+.appName {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 13px;
+  background: var(--surface-page);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.field input:focus { border-color: var(--brand); }
+
+.hasErr input { border-color: var(--p1); }
+
+.err {
+  display: block;
+  font-size: 10px;
+  color: var(--p1);
+  margin-top: 3px;
+}
+
+.serverErr {
+  font-size: 12px;
+  color: var(--p1);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.primaryBtn {
+  width: 100%;
+  background: var(--brand-fill);
+  color: var(--on-brand-fill);
+  border-radius: var(--radius);
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 12px 0 8px;
+  transition: background var(--transition-fast);
+}
+
+.primaryBtn:hover { background: var(--brand-dark); }
+.primaryBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.divider {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 8px 0;
+  position: relative;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 0.5px;
+  background: var(--border);
+}
+
+.divider::before { left: 0; }
+.divider::after  { right: 0; }
+
+.oauthBtn {
+  width: 100%;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--surface-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  transition: background var(--transition-fast);
+}
+
+.oauthBtn:hover { background: var(--surface-page); }
+
+.switchLink {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.switchLink a {
+  color: var(--brand-dark);
+  font-weight: 500;
+}

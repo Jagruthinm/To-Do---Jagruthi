@@ -1,0 +1,156 @@
+.board {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 12px 16px 24px;
+  height: 100%;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.column {
+  flex-shrink: 0;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px 4px;
+}
+
+.colTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.colCount {
+  font-size: 10px;
+  background: var(--bg-gray);
+  color: var(--text-muted);
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-height: 80px;
+}
+
+.card {
+  background: var(--surface-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.in_progress .card {
+  border-left: 3px solid var(--p3);
+}
+
+.done .card {
+  opacity: 0.6;
+}
+
+.card:hover {
+  background: var(--surface-page);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.cardPriority {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.cardTitle {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.3;
+  padding-right: 16px;
+}
+
+.cardDone .cardTitle {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.cardDate {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.moveButtons {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.moveBtn {
+  font-size: 10px;
+  color: var(--brand-dark);
+  border: 0.5px solid var(--brand);
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.moveBtn:hover {
+  background: var(--brand-fill);
+  color: var(--on-brand-fill);
+}
+
+.moveBtnDone {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.moveBtnDone:hover {
+  background: var(--text-muted);
+  color: #fff;
+}
+
+.empty {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 16px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}

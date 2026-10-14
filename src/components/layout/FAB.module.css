@@ -1,0 +1,30 @@
+.fab {
+  position: fixed;
+  bottom: 72px;
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--brand-fill);
+  color: var(--on-brand-fill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-fab);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  z-index: 50;
+}
+
+.fab:hover {
+  background: var(--brand-dark);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 1024px) {
+  .fab {
+    display: none;
+  }
+}
